@@ -1,16 +1,54 @@
-# React + Vite
+# ☕ Cafecito
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-B73C92?style=for-the-badge&logo=vite&logoColor=white)
+![Status](https://img.shields.io/badge/Status-In%20Development-yellow?style=for-the-badge)
 
-Currently, two official plugins are available:
+> **Music driven by everyone.** 🎶
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Cafecito** connects the aroma of coffee with the rhythm of your customers. It is an interactive *Jukebox* designed for coffee shops, allowing visitors to curate the venue's soundtrack. 
 
-## React Compiler
+No downloads, no hassle: they simply scan the QR code, pick their track, and enjoy their drink while their favorite song plays in the background.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Key Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+We keep the vibe flowing! Here is what you can do:
+
+- **📱 Instant Access:** Scan a QR code or enter via a shared link. No tedious sign-ups.
+- **🔍 Global Search:** Find any song (integrated with your favorite music provider).
+- **➕ Add to Queue:** Add your song to the end of the currently playing background playlist.
+- **🚀 "Play Next" Mode:** Is your track a total banger? Use the priority feature to make it the very next song.
+- **🎨 UI/UX:** A clean, fast, and responsive interface designed with React and Vite.
+
+---
+
+## 🛠️ Tech Stack
+
+This project is built with modern tools to ensure the best performance:
+
+- **Core:** [React](https://react.dev/)
+- **Build Tool:** [Vite](https://vitejs.dev/) (Ultra-fast HMR)
+- **Language:** JavaScript / TypeScript (Recommended)
+- **Linting:** ESLint + Official Vite Plugins
+
+---
+
+## 🚀 Installation & Usage
+
+Follow these steps to run **Cafecito** on your local machine:
+
+### 1. Prerequisites
+Ensure you have [Node.js](https://nodejs.org/) installed (version 16 or higher).
+
+### 2. Clone and Setup
+```bash
+# Clone the repository
+git clone [https://github.com/your-username/cafecito.git](https://github.com/your-username/cafecito.git)
+
+# Enter the folder
+cd cafecito
+
+# Install dependencies
+npm install
