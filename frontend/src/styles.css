@@ -1,0 +1,151 @@
+body {
+    background: linear-gradient(
+    135deg,
+    #34d399,
+    #60a5fa
+  );
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.container{
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 3rem;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.25);
+  max-width: 1000px;         
+  margin: 50px auto;        
+  padding: 40px;
+  border-radius: 20px;
+  border: none
+}
+
+.search-bar-container{
+    width: 40%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 200px;
+}
+
+.button{
+    border: none;
+    background-color: transparent;
+}
+
+.track-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.track-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1rem;
+  cursor: pointer;
+  text-align: center;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border 0.2s ease;
+  font-size: 12px;
+  text-align: center;
+}
+
+.track-card:hover {
+  /*transform: scale(1.05); */
+  transform: translateY(-6px);
+  border-color: #22c55e;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.track-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.song-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.song-artist {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+
+.no-results {
+  text-align: center;
+  color: #aaa;
+  margin-top: 30px;
+}
+
+@media (max-width: 1024px) {
+  .track-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .track-container {
+    grid-template-columns: 1fr;
+  }
+    .container {
+    padding: 24px;
+    margin: 20px;
+  }
+
+  .search-bar-container {
+    width: 100%;
+  }
+}
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+
+  background: #ffffff;
+  color: #1f2937;
+
+  padding: 14px 20px;
+  border-radius: 14px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.25);
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
