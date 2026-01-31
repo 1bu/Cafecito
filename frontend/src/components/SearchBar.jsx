@@ -3,6 +3,7 @@ import {FaSearch} from "react-icons/fa"
 import './component_styles.css'
 import SearchResult from "./SearchResult";
 import Toast from "./Toast";
+import { API_URL } from '../config';
 
 export const SearchBar = () =>{
 
@@ -12,7 +13,7 @@ export const SearchBar = () =>{
 
     //Search
     async function search() {
-        var trackList = await fetch(`http://localhost:3001/api/search?q=${input}&type=track`)
+        var trackList = await fetch(`${API_URL}/api/search?q=${input}&type=track`)
             .then(response => response.json())
             //.then(data =>{return data.artists.items[0].id})
             .then(data => {
@@ -26,7 +27,7 @@ export const SearchBar = () =>{
 
 async function addSong(trackID) {
     try {
-        const response = await fetch('http://localhost:3001/api/add-track', {
+        const response = await fetch(`${API_URL}/api/add-track`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -65,7 +66,7 @@ async function addToQueue(trackID){
     console.log(trackID)
     console.log("entre")
     try{
-        const response = await fetch('http://localhost:3001/api/queue' ,{
+        const response = await fetch(`${API_URL}/api/queue` ,{
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'
