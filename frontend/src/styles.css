@@ -10,6 +10,12 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+.App {
+  min-height: 100vh;      /* ocupa toda la pantalla */
+  display: flex;
+  flex-direction: column;
+}
+
 .container{
   background: #ffffff;
   border-radius: 28px;
@@ -20,21 +26,52 @@ body {
   margin: 50px auto;        
   padding: 40px;
   border-radius: 20px;
-  border: none
+  border: none;
+  flex: 1;
 }
 
 .search-bar-container{
-    width: 40%;
     margin: auto;
     display: flex;
-    flex-direction: column;
     align-items: center;
     min-width: 200px;
+    gap: 10px;
 }
 
-.button{
-    border: none;
-    background-color: transparent;
+.input-wrapper{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+input-wrapper input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+.search-icon {
+  color: #888;
+  font-size: 1rem;
+}
+
+.search-button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #1db954; /* verde Spotify vibe */
+  color: white;
+  font-weight: 500;
+}
+
+.search-button:hover {
+  opacity: 0.9;
 }
 
 .track-container {
@@ -148,4 +185,13 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+.footer{
+  background: #202020;
+  bottom: 0;
+  width: 100%;
+  opacity: 0.7;
+  text-align: center;
+  padding: 5px;
 }
