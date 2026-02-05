@@ -31,14 +31,14 @@ export const SearchBar = () =>{
     }
 
     async function addSong(trackID) {
-        console.log('🎵 Intentando agregar a playlist:', trackID); 
+        console.log('🎵 Trying to add to the playlist:', trackID); 
 
         const limitCheck = rateLimiter.canAddSong();
 
         if (!limitCheck.allowed) { // Si no puede, muestra cuánto falta
             const timeLeft = rateLimiter.formatTimeLeft(limitCheck.timeLeft);
-            console.log('🚫 BLOQUEADO - Falta:', timeLeft);  // ← DEBUG
-            showToast(`⏱️ Espera ${timeLeft} para agregar otra canción`);
+            console.log('🚫 Blocked - Time left:', timeLeft);  // ← DEBUG
+            showToast(`⏱️ Wait ${timeLeft} to add another song`);
             return;  // Sale de la función
         }
         
@@ -57,32 +57,20 @@ export const SearchBar = () =>{
 
         if (response.ok) {
             rateLimiter.recordAdd()
-            setToast("🎶 Canción agregada a la playlist");
+            setToast("🎶 Song added to the playlist");
             setTimeout(() => setToast(null), 2500);
         } else {
-            setToast("❌ No se pudo agregar la canción");
+            setToast("❌ The song could not be added");
             setTimeout(() => setToast(null), 2500);
         }
         } catch (err) {
-            setToast("❌ Error de conexión");
+            setToast("❌ Connection error");
             setTimeout(() => setToast(null), 2500);
         }
     }
 
     async function addToQueue(trackID){
         console.log(trackID)
-
-        console.log('🎵 Intentando agregar a cola:', trackID);  // ← DEBUG
-        
-        const limitCheck = rateLimiter.canAddSong();
-        console.log('🔍 Resultado de limitCheck:', limitCheck);  // ← DEBUG
-        
-        if (!limitCheck.allowed) {
-            const timeLeft = rateLimiter.formatTimeLeft(limitCheck.timeLeft);
-            console.log('🚫 BLOQUEADO - Falta:', timeLeft);  // ← DEBUG
-            showToast(`⏱️ Espera ${timeLeft} para agregar otra canción`);
-            return;
-        }
 
         try{
             const response = await fetch(`${API_URL}/api/queue` ,{
@@ -97,11 +85,10 @@ export const SearchBar = () =>{
             });
             const data = await response.json();
             if (data.success) {
-                rateLimiter.recordAdd()
-                console.log('✅ Canción agregada a la cola');
+                console.log('✅ Song added to queue');
             } else if (response.status === 404) {
-                console.error('⚠️ No hay dispositivo activo');
-                alert('Abre Spotify en tu teléfono o computadora primero');
+                console.error('⚠️ No active device found.');
+                alert('The playlist is not active yet.');
             }
         }catch(err) {
             console.error('❌ Error:', err);
