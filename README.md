@@ -17,9 +17,8 @@ No downloads, no hassle: they simply scan the QR code, pick their track, and enj
 We keep the vibe flowing! Here is what you can do:
 
 - **📱 Instant Access:** Scan a QR code or enter via a shared link. No tedious sign-ups.
-- **🔍 Global Search:** Find any song (integrated with your favorite music provider).
+- **🔍 Global Search:** Find any song (Using the Spotify API).
 - **➕ Add to Queue:** Add your song to the end of the currently playing background playlist.
-- **🚀 "Play Next" Mode:** Is your track a total banger? Use the priority feature to make it the very next song.
 - **🎨 UI/UX:** A clean, fast, and responsive interface designed with React and Vite.
 
 ---
